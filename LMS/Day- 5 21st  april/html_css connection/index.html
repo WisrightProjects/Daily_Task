@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 5 - CSS Connection Methods</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Internal CSS -->
+  <style>
+    .internal-style {
+      color: red;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+      border: 2px solid black;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">Day 5 Task: Connecting CSS to HTML</h1>
+
+  <div class="container">
+    
+    <!-- Inline CSS -->
+    <h2 style="color: green;">
+      This is Inline CSS (Applied directly inside the element)
+    </h2>
+
+    <!-- Internal CSS -->
+    <h2 class="internal-style">
+      This is Internal CSS (Defined inside &lt;style&gt; tag)
+    </h2>
+
+    <!-- External CSS -->
+    <h2 class="external-style">
+      This is External CSS (From style.css file)
+    </h2>
+
+  </div>
+
+</body>
+</html>

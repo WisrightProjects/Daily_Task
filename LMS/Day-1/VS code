@@ -1,0 +1,20 @@
+# DAY 1 SETUP - GIT INSTALLATION & CONFIGURATION
+
+
+# Step 1: Verify Git Installation
+git --version
+
+# Step 2: Configure Global Username
+git config --global user.name "John Doe"
+
+# Step 3: Configure Global Email
+git config --global user.email "john@example.com"
+
+# Step 4: Set Default Branch Name to 'main'
+git config --global init.defaultBranch main
+
+# Step 5: Verify Configuration
+git config --list
+
+
+# END OF DAY 1 SETUP

@@ -1,0 +1,17 @@
+# Initialize a new Git repository
+git init
+
+# Add all files to staging
+git add .
+
+# Create initial commit
+git commit -m "Initial commit"
+
+# Connect local repository to GitHub remote
+git remote add origin https://github.com/username/my-project.git
+
+# Rename branch to main
+git branch -M main
+
+# Push code to GitHub
+git push -u origin main

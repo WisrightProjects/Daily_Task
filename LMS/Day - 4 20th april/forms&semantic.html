@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 - HTML Forms & Semantic Layout</title>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>My Website</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- BLOG ARTICLES -->
+    <section>
+      <article>
+        <header>
+          <h2>Introduction to HTML5</h2>
+          <p>Published on <time datetime="2024-12-10">December 10, 2024</time></p>
+        </header>
+
+        <p>HTML5 introduces semantic elements that improve structure, accessibility, and SEO.</p>
+
+        <figure>
+          <img src="diagram.png" alt="Flowchart showing web request process">
+          <figcaption>Figure 1: HTTP Request/Response Cycle</figcaption>
+        </figure>
+
+        <footer>
+          <p>Author: John Doe</p>
+        </footer>
+      </article>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What is semantic HTML?</summary>
+        <p>Semantic HTML uses meaningful elements to describe content.</p>
+      </details>
+
+      <details>
+        <summary>What is HTML?</summary>
+        <p>HTML is the standard markup language for web pages.</p>
+      </details>
+    </section>
+
+    <!-- FORM -->
+    <form action="/contact" method="POST" enctype="multipart/form-data">
+
+      <!-- PERSONAL INFO -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="firstName" required>
+
+        <br><br>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="lastName" required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+      </fieldset>
+
+      <br>
+
+      <!-- ACCOUNT DETAILS -->
+      <fieldset>
+        <legend>Account Details</legend>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required minlength="4">
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8">
+
+        <br><br>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirmPassword" required>
+
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </fieldset>
+
+      <br>
+
+      <!-- PREFERENCES -->
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <p>Gender:</p>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+
+        <br><br>
+
+        <p>Interests:</p>
+        <input type="checkbox" name="interests" value="sports"> Sports
+        <input type="checkbox" name="interests" value="music"> Music
+        <input type="checkbox" name="interests" value="reading"> Reading
+        <input type="checkbox" name="interests" value="travel"> Travel
+
+        <br><br>
+
+        <label for="experience">Experience Level:</label>
+        <select id="experience" name="experience">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </fieldset>
+
+      <br>
+
+      <!-- PROFILE -->
+      <fieldset>
+        <legend>Profile</legend>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" cols="50" maxlength="500"></textarea>
+
+        <br><br>
+
+        <label for="profile-pic">Profile Picture:</label>
+        <input type="file" id="profile-pic" name="profilePic" accept="image/*">
+      </fieldset>
+
+      <br>
+
+      <!-- FINAL -->
+      <fieldset>
+        <legend>Final Step</legend>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </fieldset>
+
+    </form>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <h3>Related Posts</h3>
+    <ul>
+      <li><a href="#">HTML Basics</a></li>
+      <li><a href="#">CSS Guide</a></li>
+      <li><a href="#">JavaScript Intro</a></li>
+    </ul>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 My Website</p>
+
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">About</a> |
+      <a href="#">Contact</a>
+    </nav>
+
+    <p>Email: support@mywebsite.com</p>
+  </footer>
+
+</body>
+</html>

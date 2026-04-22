@@ -1,0 +1,215 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global box-sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Base typography */
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    /* Links */
+    a {
+      color: #3498db;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
+    /* Navigation */
+    .nav-link {
+      display: inline-block;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .nav-link:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Hero */
+    .hero {
+      height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('hero.jpg') center/cover no-repeat;
+    }
+
+    /* Cards */
+    .card-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      width: 300px;
+      padding: 20px;
+      margin: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      transform: translateY(-3px);
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-gradient {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+    }
+
+    .btn-gradient {
+      padding: 15px 30px;
+      border-radius: 25px;
+    }
+
+    /* Gradient Section */
+    .gradient-section {
+      background: radial-gradient(circle, #f5f7fa, #c3cfe2);
+      padding: 60px;
+      text-align: center;
+    }
+
+    /* Visibility utilities */
+    .hidden { display: none; }
+    .invisible { visibility: hidden; }
+    .fade { opacity: 0; }
+    .show { display: block; opacity: 1; }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Awesome Blog</h1>
+  <nav>
+    <a href="#" class="nav-link">Home</a>
+    <a href="#" class="nav-link">About</a>
+    <a href="#" class="nav-link">Posts</a>
+    <a href="#" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<div class="hero"></div>
+
+<main class="card-container">
+
+  <section>
+    <h2>Blog Posts</h2>
+
+    <article class="card">
+      <header>
+        <h3>My First Blog Post</h3>
+        <time datetime="2026-04-21">April 21, 2026</time>
+      </header>
+      <p>This is the content of the first blog post.</p>
+      <footer>Author: Surya Dinesh</footer>
+    </article>
+
+    <article class="card">
+      <header>
+        <h3>My Second Blog Post</h3>
+        <time datetime="2026-04-21">April 21, 2026</time>
+      </header>
+      <p>This is the content of the second blog post.</p>
+      <figure>
+        <img src="https://via.placeholder.com/600x300" alt="Blog image">
+        <figcaption>Sample image description</figcaption>
+      </figure>
+      <footer>Author: Surya Dinesh</footer>
+    </article>
+
+  </section>
+
+</main>
+
+<aside>
+  <section>
+    <h2>About</h2>
+    <p>This blog shares web development content.</p>
+  </section>
+
+  <section>
+    <h2>Categories</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Recent Posts</h2>
+    <ul>
+      <li><a href="#">Semantic HTML</a></li>
+      <li><a href="#">Flexbox Basics</a></li>
+    </ul>
+  </section>
+</aside>
+
+<footer>
+  <p>&copy; 2026 My Awesome Blog</p>
+  <address>
+    Contact: <a href="mailto:contact@example.com">contact@example.com</a>
+  </address>
+  <nav>
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms</a>
+  </nav>
+</footer>
+
+</body>
+</html>
+```

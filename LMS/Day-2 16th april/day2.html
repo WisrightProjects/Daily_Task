@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 2 - Web Development & DevTools Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header, footer {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    section {
+      background: #fff;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007acc;
+    }
+    code, pre {
+      background: #eee;
+      padding: 5px;
+      border-radius: 5px;
+      display: block;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Day 2 Report</h1>
+  <p>HTTP, JavaScript, and Chrome DevTools Practice</p>
+</header>
+
+<main>
+
+  <!-- HTTP Status Codes -->
+  <section>
+    <h2>HTTP Status Codes</h2>
+    <ul>
+      <li>200 - OK</li>
+      <li>201 - Created</li>
+      <li>400 - Bad Request</li>
+      <li>401 - Unauthorized</li>
+      <li>404 - Not Found</li>
+      <li>500 - Internal Server Error</li>
+    </ul>
+  </section>
+
+  <!-- HTTP Methods -->
+  <section>
+    <h2>HTTP Methods</h2>
+    <ul>
+      <li>GET - Retrieve data</li>
+      <li>POST - Create new data</li>
+      <li>PUT - Update entire resource</li>
+      <li>PATCH - Partial update</li>
+      <li>DELETE - Remove resource</li>
+    </ul>
+  </section>
+
+  <!-- Network Resources -->
+  <section>
+    <h2>Network Panel Observations</h2>
+    <ul>
+      <li>HTML (Document)</li>
+      <li>CSS (Stylesheets)</li>
+      <li>JavaScript (Scripts)</li>
+      <li>Images</li>
+      <li>Fonts</li>
+      <li>XHR / Fetch (API calls)</li>
+    </ul>
+  </section>
+
+  <!-- GET vs POST -->
+  <section>
+    <h2>GET vs POST Comparison</h2>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>GET</th>
+        <th>POST</th>
+      </tr>
+      <tr>
+        <td>Purpose</td>
+        <td>Retrieve data</td>
+        <td>Send data</td>
+      </tr>
+      <tr>
+        <td>Data Location</td>
+        <td>URL</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <td>Visibility</td>
+        <td>Visible</td>
+        <td>Hidden</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Elements Panel -->
+  <section>
+    <h2>Elements Panel Modifications</h2>
+    <ul>
+      <li>Changed heading text using inspect tool</li>
+      <li>Modified text color using CSS</li>
+      <li>Changed background color</li>
+      <li>Hid elements using <code>display: none;</code></li>
+    </ul>
+  </section>
+
+  <!-- Console -->
+  <section>
+    <h2>Console Panel Practice</h2>
+    <pre>
+console.log("Message");
+console.warn("Warning");
+console.error("Error");
+
+2 + 3;
+Math.sqrt(16);
+
+document.querySelector("h1").textContent = "Updated Text";
+    </pre>
+  </section>
+
+  <!-- Throttling -->
+  <section>
+    <h2>Network Throttling Results</h2>
+    <ul>
+      <li>No Throttling: Fast (~1s)</li>
+      <li>Fast 3G: Moderate (2–5s)</li>
+      <li>Slow 3G: Slow (5–15s)</li>
+    </ul>
+  </section>
+
+  <!-- Abbreviation -->
+  <section>
+    <h2>HTML Abbreviation Element</h2>
+    <p>
+      <abbr title="HyperText Markup Language">HTML</abbr> is the standard language for creating webpages.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Day 2 Report - Surya</p>
+</footer>
+
+</body>
+</html>

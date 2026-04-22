@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 6 - Flexbox Tasks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    section {
+      margin: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      color: #fff;
+      padding: 15px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      text-align: center;
+    }
+
+    /* 3 Columns */
+    .columns {
+      display: flex;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      background: #3498db;
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* Card Grid */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1 1 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Sidebar Layout */
+    .layout {
+      display: flex;
+      min-height: 400px;
+    }
+
+    .sidebar {
+      flex: 0 0 250px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+      background: #ecf0f1;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 20px;
+      background: #222;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      display: flex;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #3498db;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div>MyLogo</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Welcome</h1>
+      <p>Centered hero section using Flexbox</p>
+    </div>
+  </section>
+
+  <!-- Columns -->
+  <section>
+    <h2>Three Columns</h2>
+    <div class="columns">
+      <div class="column">Column 1</div>
+      <div class="column">Column 2</div>
+      <div class="column">Column 3</div>
+    </div>
+  </section>
+
+  <!-- Card Grid -->
+  <section>
+    <h2>Responsive Card Grid</h2>
+    <div class="card-container">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+    </div>
+  </section>
+
+  <!-- Sidebar Layout -->
+  <section>
+    <h2>Sidebar Layout</h2>
+    <div class="layout">
+      <div class="sidebar">Sidebar</div>
+      <div class="main">Main Content</div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial">
+    <div class="testimonial-card">
+      <div class="avatar"></div>
+      <h3>John Doe</h3>
+      <p>"Great experience using Flexbox layouts!"</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </footer>
+
+</body>
+</html>
