@@ -1,0 +1,115 @@
+body{
+    background-color: black;
+}
+
+.box{
+    background-color: orangered;
+    width: 100%;
+    height: 100px;
+    padding:0px;
+    margin-top: 50px;
+    animation-name: myanime;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    
+}
+.txt{
+    color: white;
+    margin-top: -90px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    animation-name: mytxt;
+    padding-top:-30px;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    width: fit-content;
+    background-color:none;
+    
+    
+}
+@keyframes myanime{
+    0%{background-color: orangered;}
+    50%{background-color: orangered;}
+    75%{background-color: white;}
+    100%{background-color: orangered;}
+}
+@keyframes mytxt{
+    0%{background-color: orangered;}
+    30%{background-color: orangered;}
+    75%{background-color: orangered;}
+    100%{background-color: orangered;}
+}
+.container{
+    display: inline;
+    background-color: aqua;
+}
+
+#one{
+    width: 200px;
+    height: 150px;
+    margin-top: 100px;
+    margin-left: 400px;
+    background-color: white;
+    border: 2px solid black;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    /* transition-property: background,border-radius,color;
+    transition-duration: 2s; */
+    animation-name:anime;
+    animation-duration:  2s;
+
+}
+/* @keyframes anime{
+    100%{background-color: orangered; margin-left:850px; margin-top:-164px;}
+} */
+/* .one:hover{
+    background: orangered;
+    color: white;
+    border-radius: 50%;
+} */
+
+#two{
+    width: 200px;
+    height: 150px;
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+    border: 2px solid black;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    animation-name: an;
+}
+/* @keyframes an{
+    100%{background-color: orangered; margin-top: 100px; margin-left: 400px;}
+} */
+#three{
+    width: 200px;
+    height:150px;
+    background-color: white;
+    text-align: center;
+    border: 2px solid black;
+    animation-name: three;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}
+#four{
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    text-align: center;
+    border: 2px solid black;
+    animation-name: four;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}

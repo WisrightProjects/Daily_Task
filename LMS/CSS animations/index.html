@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 9 - CSS Animations</title>
+  <style>
+    *{
+        background:orangered;
+        color: white;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .page-content {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #ccc;
+      border-top: 5px solid #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 20px 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      background: white;
+      color: black;
+      border-radius: 999px;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .arrow {
+      display: inline-block;
+      font-size: 24px;
+      animation: bounce 1s ease infinite;
+    }
+
+    @keyframes progress {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    .progress-container {
+      width: 100%;
+      background: #eee;
+      margin: 20px 0;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: linear-gradient(rgb(55, 193, 5),white,rgb(55, 193, 5));
+      width: 0%;
+      animation: progress 2s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .slide-box {
+      background: rgba(68, 231, 74, 0.694);
+      color: black;
+      padding: 10px;
+      margin: 20px 0;
+      animation: slideIn 0.5s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .error {
+      display: inline-block;
+      padding: 10px;
+      background:black;
+      color: white;
+      animation: shake 0.5s ease;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="page-content">
+    <center><h1 style="font-style: italic;font-family:'Times New Roman', Times, serif;
+    text-decoration: underline;font-weight: bold; ;color:white;">Day 9 - CSS Animations Demo</h1></center>
+
+    <h3 style="font-style: italic;font-family:Verdana, Geneva, Tahoma, sans-serif;text-decoration: underline;">Spinner Loader</h3>
+    <div class="spinner"></div>
+
+    <h3 style="font-style: italic;font-family:Verdana, Geneva, Tahoma, sans-serif;text-decoration: underline;">Pulse Notification</h3>
+    <div class="badge">New</div>
+
+    <h3 style="font-style: italic;font-family:Verdana, Geneva, Tahoma, sans-serif;text-decoration: underline;">Bounce Arrow</h3>
+    <div class="arrow">⬇</div>
+
+    <h3 style="font-style: italic;font-family:Verdana, Geneva, Tahoma, sans-serif;text-decoration: underline;">Progress Bar</h3>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+
+    <h3 style="font-style: italic;font-family:Verdana, Geneva, Tahoma, sans-serif;text-decoration: underline;">Slide In Box</h3>
+    <div class="slide-box">This box slides in ====></div>
+
+    <h3 style="font-style: italic;font-family:Verdana, Geneva, Tahoma, sans-serif;text-decoration: underline;">Error Shake</h3>
+    <div class="error">Invalid Input</div>
+
+  </div>
+
+</body>
+</html>
+
+
