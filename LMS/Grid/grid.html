@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 7 - CSS Grid Tasks</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-responsive {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-3x3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 150px);
+}
+
+.grid-center {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+  place-items: center;
+}
+
+.holy-grail {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "sidebar main aside"
+    "footer footer footer";
+  min-height: 60vh;
+}
+
+.header { grid-area: header; background: #4CAF50; color: white; padding: 20px; }
+.sidebar { grid-area: sidebar; background: #2196F3; color: white; padding: 20px; }
+.main { grid-area: main; background: white; padding: 20px; }
+.aside { grid-area: aside; background: #ff9800; color: white; padding: 20px; }
+.footer { grid-area: footer; background: #333; color: white; padding: 20px; text-align: center; }
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.flex-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background: #2196F3;
+  color: white;
+  border-radius: 5px;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Basic 3 Column Grid</h2>
+<div class="grid grid-3">
+  <div class="card">1</div>
+  <div class="card">2</div>
+  <div class="card">3</div>
+</div>
+
+<h2>Responsive Grid</h2>
+<div class="grid grid-responsive">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+</div>
+
+<h2>3x3 Grid</h2>
+<div class="grid grid-3x3">
+  <div class="card">1</div><div class="card">2</div><div class="card">3</div>
+  <div class="card">4</div><div class="card">5</div><div class="card">6</div>
+  <div class="card">7</div><div class="card">8</div><div class="card">9</div>
+</div>
+
+<h2>Centered Items Grid</h2>
+<div class="grid grid-center">
+  <div class="card">A</div>
+  <div class="card">B</div>
+  <div class="card">C</div>
+</div>
+
+<h2>Holy Grail Layout</h2>
+<div class="holy-grail">
+  <div class="header">Header</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="main">Main Content</div>
+  <div class="aside">Aside</div>
+  <div class="footer">Footer</div>
+</div>
+
+<h2>Grid + Flex Cards</h2>
+<div class="grid grid-3">
+  <div class="card flex-card">
+    <h3>Card 1</h3>
+    <p>Content here...</p>
+    <button>Read More</button>
+  </div>
+  <div class="card flex-card">
+    <h3>Card 2</h3>
+    <p>Content here...</p>
+    <button>Read More</button>
+  </div>
+  <div class="card flex-card">
+    <h3>Card 3</h3>
+    <p>Content here...</p>
+    <button>Read More</button>
+  </div>
+</div>
+
+</body>
+</html>
