@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10 - Tailwind Practice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="flex justify-between items-center p-4 bg-white shadow">
+    <div class="text-xl font-bold">TWND web Page</div>
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#" class="text-gray-700 hover:text-blue-500">Home</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-500">About</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-500">Services</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-500">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome</h1>
+      <p class="mb-6 text-lg md:text-xl">Grab Your Order Soon !!</p>
+
+      <div class="space-x-4">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Primary
+        </button>
+        <button class="border border-white text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-blue-600">
+          Secondary
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="p-6">
+    <h2 class="text-2xl font-bold text-center mb-6">FOOD MENU</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="/img/biri.jpg" alt="">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Biriyani</h3>
+          <p class="text-gray-700 mb-4">Biryani is a timeless celebration of flavor, aroma, and tradition—one of the most beloved dishes across the Indian subcontinent. Made with fragrant long-grain basmati rice, tender cuts of meat or fresh vegetables, and a rich blend of spices, biryani is slow-cooked to perfection, allowing every ingredient to infuse deeply into the dish.</p>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Read More
+          </button>
+        </div>
+      </div>
+
+      <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="/img/chick.jpg" alt="">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Honey Chicken</h3>
+          <p class="text-gray-700 mb-4">Honey Chicken is a perfect blend of sweet, savory, and lightly crispy goodness—an irresistible favorite for food lovers of all ages. Tender pieces of chicken are coated in a light batter, fried to golden perfection, and then tossed in a rich, glossy honey-based sauce that delivers just the right touch of sweetness.</p>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Read More
+          </button>
+        </div>
+      </div>
+
+      <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="w-full h-48 object-cover" src="/img/nood.jpg" alt="">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Noodels</h3>
+          <p class="text-gray-700 mb-4">Noodles are a comforting and versatile favorite, loved for their satisfying texture and endless flavor possibilities. Made from wheat, rice, or other grains, they are cooked to perfection and tossed with a vibrant mix of vegetables, sauces, and spices to create a dish that’s both simple and delicious.</p>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Read More
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
