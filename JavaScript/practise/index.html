@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colour change</title>
+
+    <style>
+        div{
+            width: 500px;
+            height: 650px;
+            background-color: black;
+        }
+        .widthmax{
+            width: 1500px;
+        }
+        #box h1{
+            color: white;
+            font-size: 100px;
+            justify-content: center;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div id="box">
+            <h1 id="surya">Surya Dinesh</h1>
+        </div>
+    <button onclick="change()">Click Me</button>
+    </center>
+
+    <script>
+      
+      var box = document.getElementById(`box`)
+
+      function change(){
+
+        if (box.style.backgroundColor ===`red`){
+            // box.setAttribute(`class`,`widthmax`)
+            box.style.backgroundColor=`black`
+            
+           
+        }
+
+        else{
+            box.style.backgroundColor =`red`
+            
+        }
+
+        if(surya.style.color === `blue`){
+            surya.style.color = `white`
+        }
+        else{
+            surya.style.color =`blue`
+        }
+      }
+
+    </script>
+    
+</body>
+</html>

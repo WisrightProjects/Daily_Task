@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Todo App</title>
+<!-- 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .controls {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    #taskList {
+        list-style: none;
+        padding: 0;
+    }
+
+    .task-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 8px;
+        cursor: move;
+    }
+
+    .task-text {
+        flex: 1;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .dragging {
+        opacity: 0.5;
+    }
+
+    .selected {
+        border: 2px solid blue;
+    }
+
+    #helpPanel {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 15px;
+    }
+</style> -->
+</head>
+
+<body>
+<!-- 
+<h2>Advanced Todo App</h2>
+
+<form id="taskForm">
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter task"
+    >
+    <button type="submit">Add Task</button>
+</form>
+
+<br>
+
+<input
+    type="text"
+    id="searchInput"
+    placeholder="Search tasks..."
+>
+
+<div class="controls" id="filterContainer">
+    <button type="button" data-filter="all">All</button>
+    <button type="button" data-filter="active">Active</button>
+    <button type="button" data-filter="completed">Completed</button>
+</div>
+
+<div id="stats">
+    Total: <span id="totalCount">0</span> |
+    Completed: <span id="completedCount">0</span> |
+    Remaining: <span id="remainingCount">0</span>
+</div>
+
+<ul id="taskList"></ul>
+
+<div id="helpPanel" hidden>
+    <h3>Keyboard Shortcuts</h3>
+    <ul>
+        <li>Ctrl + N → Focus task input</li>
+        <li>Ctrl + F → Focus search</li>
+        <li>Ctrl + / → Toggle help</li>
+        <li>Delete → Delete selected task</li>
+        <li>Enter → Save edit</li>
+        <li>Escape → Cancel edit / Clear search</li>
+    </ul>
+</div>
+
+<div id="calculation">
+    party - 2000
+    shoes - 2000
+    shirt  - 2000
+
+</div> -->
+
+<script>
+
+// const taskForm = document.getElementById('taskForm');
+// const taskInput = document.getElementById('taskInput');
+// const taskList = document.getElementById('taskList');
+// const searchInput = document.getElementById('searchInput');
+// const filterContainer = document.getElementById('filterContainer');
+// const helpPanel = document.getElementById('helpPanel');
+
+// let draggedItem = null;
+
+// // Create Task
+// taskForm.addEventListener('submit', (event) => {
+//     event.preventDefault();
+
+//     const text = taskInput.value.trim();
+
+//     if (!text) {
+//         alert('Please enter a task');
+//         return;
+//     }
+
+//     const li = document.createElement('li');
+
+//     li.className = 'task-item';
+//     li.draggable = true;
+
+//     li.innerHTML = `
+//         <input type="checkbox" class="task-checkbox">
+
+//         <span class="task-text">${text}</span>
+
+//         <button class="edit-btn">Edit</button>
+
+//         <button class="delete-btn">Delete</button>
+//     `;
+
+//     taskList.appendChild(li);
+
+//     taskInput.value = '';
+//     taskInput.focus();
+
+//     updateStats();
+// });
+
+// // Event Delegation
+// taskList.addEventListener('click', (event) => {
+
+//     console.log(event.type);
+//     console.log(event.target);
+//     console.log(event.currentTarget);
+
+//     const taskItem =
+//         event.target.closest('.task-item');
+
+//     if (!taskItem) return;
+
+//     // Select Task
+//     document
+//         .querySelectorAll('.task-item')
+//         .forEach(task =>
+//             task.classList.remove('selected'));
+
+//     taskItem.classList.add('selected');
+
+//     // Delete
+//     if (event.target.matches('.delete-btn')) {
+//         taskItem.remove();
+//         updateStats();
+//     }
+
+//     // Edit
+//     if (event.target.matches('.edit-btn')) {
+
+//         const taskText =
+//             taskItem.querySelector('.task-text');
+
+//         const originalText =
+//             taskText.textContent;
+
+//         const input =
+//             document.createElement('input');
+
+//         input.className = 'edit-input';
+//         input.value = originalText;
+
+//         taskText.replaceWith(input);
+
+//         input.focus();
+//         input.select();
+
+//         input.addEventListener('keydown', (e) => {
+
+//             if (e.key === 'Enter') {
+
+//                 const span =
+//                     document.createElement('span');
+
+//                 span.className = 'task-text';
+
+//                 span.textContent =
+//                     input.value.trim() ||
+//                     originalText;
+
+//                 input.replaceWith(span);
+//             }
+
+//             if (e.key === 'Escape') {
+
+//                 const span =
+//                     document.createElement('span');
+
+//                 span.className = 'task-text';
+
+//                 span.textContent =
+//                     originalText;
+
+//                 input.replaceWith(span);
+//             }
+//         });
+
+//         input.addEventListener('blur', () => {
+
+//             const span =
+//                 document.createElement('span');
+
+//             span.className = 'task-text';
+
+//             span.textContent =
+//                 input.value.trim() ||
+//                 originalText;
+
+//             input.replaceWith(span);
+//         });
+//     }
+// });
+
+// // Checkbox Change
+// taskList.addEventListener('change', (event) => {
+
+//     if (
+//         event.target.matches('.task-checkbox')
+//     ) {
+
+//         const taskItem =
+//             event.target.closest('.task-item');
+
+//         taskItem
+//             .querySelector('.task-text')
+//             .classList.toggle(
+//                 'completed',
+//                 event.target.checked
+//             );
+
+//         updateStats();
+//     }
+// });
+
+// // Search
+// searchInput.addEventListener('input', (event) => {
+
+//     const term =
+//         event.target.value
+//             .toLowerCase()
+//             .trim();
+
+//     document
+//         .querySelectorAll('.task-item')
+//         .forEach(task => {
+
+//             const text =
+//                 task.textContent.toLowerCase();
+
+//             task.classList.toggle(
+//                 'hidden',
+//                 !text.includes(term)
+//             );
+//         });
+// });
+
+// // Filter Buttons
+// filterContainer.addEventListener('click', (event) => {
+
+//     if (
+//         !event.target.matches(
+//             'button[data-filter]'
+//         )
+//     ) return;
+
+//     const filter =
+//         event.target.dataset.filter;
+
+//     document
+//         .querySelectorAll('.task-item')
+//         .forEach(task => {
+
+//             task.classList.remove('hidden');
+
+//             const completed =
+//                 task
+//                 .querySelector('.task-checkbox')
+//                 .checked;
+
+//             if (
+//                 filter === 'active' &&
+//                 completed
+//             ) {
+//                 task.classList.add('hidden');
+//             }
+
+//             if (
+//                 filter === 'completed' &&
+//                 !completed
+//             ) {
+//                 task.classList.add('hidden');
+//             }
+//         });
+// });
+
+// // Global Shortcuts
+// document.addEventListener('keydown', (event) => {
+
+//     if (
+//         event.target.matches(
+//             'input, textarea'
+//         )
+//     ) return;
+
+//     if (
+//         event.ctrlKey &&
+//         event.key === 'n'
+//     ) {
+//         event.preventDefault();
+//         taskInput.focus();
+//     }
+
+//     if (
+//         event.ctrlKey &&
+//         event.key === 'f'
+//     ) {
+//         event.preventDefault();
+//         searchInput.focus();
+//     }
+
+//     if (
+//         event.ctrlKey &&
+//         event.key === '/'
+//     ) {
+//         event.preventDefault();
+//         helpPanel.hidden =
+//             !helpPanel.hidden;
+//     }
+
+//     if (
+//         event.key === 'Escape'
+//     ) {
+//         searchInput.value = '';
+
+//         searchInput.dispatchEvent(
+//             new Event('input')
+//         );
+//     }
+
+//     if (
+//         event.key === 'Delete'
+//     ) {
+//         const selected =
+//             document.querySelector(
+//                 '.selected'
+//             );
+
+//         if (selected) {
+//             selected.remove();
+//             updateStats();
+//         }
+//     }
+// });
+
+// // Drag & Drop
+// taskList.addEventListener('dragstart', (event) => {
+
+//     if (
+//         !event.target.matches('.task-item')
+//     ) return;
+
+//     draggedItem = event.target;
+
+//     draggedItem.classList.add(
+//         'dragging'
+//     );
+// });
+
+// taskList.addEventListener('dragend', () => {
+
+//     if (draggedItem) {
+
+//         draggedItem.classList.remove(
+//             'dragging'
+//         );
+
+//         draggedItem = null;
+//     }
+// });
+
+// taskList.addEventListener('dragover', (event) => {
+
+//     event.preventDefault();
+
+//     const target =
+//         event.target.closest('.task-item');
+
+//     if (
+//         !target ||
+//         target === draggedItem
+//     ) return;
+
+//     const rect =
+//         target.getBoundingClientRect();
+
+//     const midpoint =
+//         rect.top + rect.height / 2;
+
+//     if (
+//         event.clientY < midpoint
+//     ) {
+//         taskList.insertBefore(
+//             draggedItem,
+//             target
+//         );
+//     } else {
+//         taskList.insertBefore(
+//             draggedItem,
+//             target.nextElementSibling
+//         );
+//     }
+// });
+
+// // Stats
+// function updateStats() {
+
+//     const tasks =
+//         document.querySelectorAll(
+//             '.task-item'
+//         );
+
+//     const completed =
+//         document.querySelectorAll(
+//             '.task-checkbox:checked'
+//         );
+
+//     document.getElementById(
+//         'totalCount'
+//     ).textContent =
+//         tasks.length;
+
+//     document.getElementById(
+//         'completedCount'
+//     ).textContent =
+//         completed.length;
+
+//     document.getElementById(
+//         'remainingCount'
+//     ).textContent =
+//         tasks.length -
+//         completed.length;
+// }
+
+// updateStats();
+
+localStorage.setItem(`Name`,`Surya`);
+sessionStorage.setItem(`person`,`akilan`);
+
+console.log(localStorage.getItem(`Name`),sessionStorage.getItem(`person`));
+
+
+
+</script>
+
+</body>
+</html>
+

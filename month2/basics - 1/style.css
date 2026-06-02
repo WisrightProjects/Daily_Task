@@ -1,0 +1,18 @@
+h1{
+    font-size: 3em;
+    font-weight: bold;
+    font-style: italic;
+    justify-content: center;
+    text-shadow: 3px 3px #0005;
+}
+
+h3{
+    font-size: 2em;
+    color: orangered;
+    font-weight: bold;
+    font-style: italic;
+    justify-content: center;
+    text-shadow: 3px 3px rgba(24, 8, 8, 0.333);
+    
+
+}

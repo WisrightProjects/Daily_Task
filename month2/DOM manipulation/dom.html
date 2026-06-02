@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Task</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #taskInput {
+            padding: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .highlight {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="heading">DOM Manipulation Practice</h1>
+
+    <div id="container">
+        <p class="info">
+            Build and manage tasks dynamically.
+        </p>
+    </div>
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter a task"
+        data-type="task"
+    >
+
+    <button
+        id="addBtn"
+        data-action="add-task"
+    >
+        Add Task
+    </button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+
+
+        const heading =
+            document.querySelector('#heading');
+
+        const container =
+            document.querySelector('#container');
+
+        const taskInput =
+            document.querySelector('#taskInput');
+
+        const addBtn =
+            document.querySelector(
+                '[data-action="add-task"]'
+            );
+
+        const taskList =
+            document.querySelector('#taskList');
+
+        heading.textContent =
+            'Interactive To-Do List';
+
+        container.innerHTML += `
+            <p>
+                Add, complete, and remove tasks.
+            </p>
+        `;
+
+        console.log(
+            taskInput.getAttribute(
+                'placeholder'
+            )
+        );
+
+        taskInput.setAttribute(
+            'maxlength',
+            '50'
+        );
+
+        console.log(
+            taskInput.dataset.type
+        );
+
+  
+        function addTask() {
+
+            const taskText =
+                taskInput.value.trim();
+
+            if (taskText === '') {
+                alert(
+                    'Please enter a task'
+                );
+                return;
+            }
+
+            const li =
+                document.createElement('li');
+
+            const taskSpan =
+                document.createElement('span');
+
+            const completeBtn =
+                document.createElement('button');
+
+            const removeBtn =
+                document.createElement('button');
+
+            taskSpan.textContent =
+                taskText;
+
+            completeBtn.textContent =
+                'Complete';
+
+            removeBtn.textContent =
+                'Remove';
+
+            li.classList.add('highlight');
+
+            li.appendChild(taskSpan);
+            li.appendChild(completeBtn);
+            li.appendChild(removeBtn);
+
+            taskList.appendChild(li);
+
+            completeBtn.addEventListener(
+                'click',
+                () => {
+
+                    taskSpan.classList.toggle(
+                        'completed'
+                    );
+
+                    if (
+                        taskSpan.classList.contains(
+                            'completed'
+                        )
+                    ) {
+                        console.log(
+                            'Task Completed'
+                        );
+                    }
+
+                }
+            );
+
+            removeBtn.addEventListener(
+                'click',
+                () => {
+
+                    console.log(
+                        li.parentElement
+                    );
+
+                    li.remove();
+
+                }
+            );
+
+            console.log(
+                taskList.children
+            );
+
+            console.log(
+                taskList.firstElementChild
+            );
+
+            console.log(
+                taskList.lastElementChild
+            );
+
+            taskInput.value = '';
+        }
+
+
+        addBtn.addEventListener(
+            'click',
+            addTask
+        );
+
+        taskInput.addEventListener(
+            'keypress',
+            (event) => {
+
+                if (
+                    event.key === 'Enter'
+                ) {
+                    addTask();
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>

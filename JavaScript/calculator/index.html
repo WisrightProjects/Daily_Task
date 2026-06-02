@@ -1,0 +1,222 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+        *{
+            background-color: grey;
+        }
+        h1{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+            font-weight: bold;
+            font-style: italic;
+            width: fit-content;
+            height: fit-content;
+            background-color: whitesmoke;
+            color: orangered;
+            margin-top: 160px ;
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div style="">
+           <center><h1>Mini Calculator</h1></center> 
+    <center>
+   <div style="width:250px;height:200px;border: 2px solid black; background-color: whitesmoke;margin-top: -20px;  ">
+     
+        <p style="background-color: whitesmoke; font-weight: bold;color: orangered;">A: <input type="number" placeholder="Enter Number" id="one" style="background-color: whitesmoke;"></p> 
+    <p style="background-color: whitesmoke; font-weight: bold; color: orangered;">B: <input type="number" placeholder="Enter Number" id="two" style="background-color: whitesmoke;"></p>
+    <div style="background-color: whitesmoke;">
+        <p style="background-color: whitesmoke; font-weight: bold; color: orangered;">TOTAL: <input type="number" id="result" style="width: 110px; background-color: white;"></p>
+        <button onclick="addition()" style="height: 20px; margin-top: 15px;background-color: whitesmoke;color: black;">ADD</button>
+        <button onclick="subraction()" style="height: 20px; margin-top: 15px;background-color: whitesmoke;color: black;">SUB</button>
+        <button onclick="multiplication()" style="height: 20px; margin-top: 15px;background-color: whitesmoke;color: black;">X</button> 
+        <button onclick="Division()" style="height: 20px; margin-top: 15px;background-color: whitesmoke;color: black;">/</button>  
+        <button onclick="clean()" style="height: 20px; margin-top: 15px;background-color: whitesmoke;color: black;">CLEAR</button> 
+    </div>
+   </div>
+   </center>
+    </div>
+ 
+
+   <script>
+     let box1 = document.getElementById(`one`)
+     let box2 = document.getElementById(`two`)
+     let res = document.getElementById(`result`)
+
+     function addition(){
+        let total = Number(box1.value) + Number(box2.value)
+        result.value = total
+     }
+     function subraction(){
+        let subtotal = Number(box1.value) - Number(box2.value)
+        result.value = subtotal
+     }
+     function multiplication(){
+        let multotal = Number(box1.value) * Number(box2.value)
+        result.value = multotal
+     }
+     function Division(){
+        let divtotal = Number(box1.value) / Number(box2.value)
+        result.value = divtotal
+     }
+     function clean(){
+        result.value = result.clean
+        box1.value = box1.clean
+        box2.value = box2.clean
+     }
+
+   </script> 
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iphone Style Calculator</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:white;
+    }
+
+    .calculator{
+      width:320px;
+      background:#000;
+      padding:20px;
+      border-radius:30px;
+      box-shadow:0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .display{
+      width:100%;
+      height:100px;
+      border:none;
+      background:#000;
+      color:white;
+      font-size:50px;
+      text-align:right;
+      padding:20px 10px;
+      outline:none;
+    }
+
+    .buttons{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    button{
+      height:65px;
+      border:none;
+      border-radius:50%;
+      font-size:24px;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    button:active{
+      transform:scale(0.95);
+    }
+
+    .gray{
+      background:#a5a5a5;
+      color:black;
+    }
+
+    .dark{
+      background:#333;
+      color:white;
+    }
+
+    .orange{
+      background:#ff9f0a;
+      color:white;
+    }
+
+    .zero{
+      grid-column:span 2;
+      border-radius:40px;
+      text-align:left;
+      padding-left:28px;
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <div class="calculator">
+    
+    <input type="text" class="display" id="display" value="0" readonly>
+
+    <div class="buttons">
+      <button class="gray" onclick="clearDisplay()">AC</button>
+      <button class="gray" onclick="appendValue('%')">%</button>
+      <button class="gray" onclick="appendValue('/')">÷</button>
+      <button class="orange" onclick="appendValue('*')">×</button>
+
+      <button class="dark" onclick="appendValue('7')">7</button>
+      <button class="dark" onclick="appendValue('8')">8</button>
+      <button class="dark" onclick="appendValue('9')">9</button>
+      <button class="orange" onclick="appendValue('-')">−</button>
+
+      <button class="dark" onclick="appendValue('4')">4</button>
+      <button class="dark" onclick="appendValue('5')">5</button>
+      <button class="dark" onclick="appendValue('6')">6</button>
+      <button class="orange" onclick="appendValue('+')">+</button>
+
+      <button class="dark" onclick="appendValue('1')">1</button>
+      <button class="dark" onclick="appendValue('2')">2</button>
+      <button class="dark" onclick="appendValue('3')">3</button>
+      <button class="orange" onclick="calculate()">=</button>
+
+      <button class="dark zero" onclick="appendValue('0')">0</button>
+      <button class="dark" onclick="appendValue('.')">.</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById("display");
+
+    function appendValue(value) {
+      if (display.value === "0") {
+        display.value = value;
+      } else {
+        display.value += value;
+      }
+    }
+
+    function clearDisplay() {
+      display.value = "0";
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Error";
+      }
+    }
+  </script>
+
+</body>
+</html>
