@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form class="weatherform">
-        <input type="text" class="cityinput" placeholder="Enter City ">
-        <button type="sumbit">Get Weather</button>
-    </form>
 
-    <div class="card">
-        <h1 class="cityDisplay">Miami</h1>
-        <p class="tempDisplay">90 F</p>
-        <p class="humidityDisplay">Humidity: 75%</p>
-        <p class="descDisplay">Clear Skies</p>
-        <p class="weatherEmoj">☀️</p>
-        <p class="erroraDisplay">Please Enter a City</p>
+    <button id="themeToggle">🌙 Dark Mode</button>
+
+    <div class="container">
+
+        <h1>Weather App</h1>
+
+        <form class="weatherform">
+            <input
+                type="text"
+                class="cityinput"
+                placeholder="Enter city..."
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <button id="locationBtn">
+            Current Location📍
+        </button>
+
+        <div class="card">
+        </div>
+
+        <div class="forecast-container">
+        </div>
+
     </div>
 
     <script src="index.js"></script>
+
 </body>
 </html>
