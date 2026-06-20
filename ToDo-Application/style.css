@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:800px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+header h1{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+header p{
+    color:#666;
+}
+
+.todo-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.input-group{
+    display:flex;
+    gap:10px;
+}
+
+.input-group input{
+    flex:1;
+    padding:14px;
+    border:2px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.input-group input:focus{
+    border-color:#2563eb;
+}
+
+.input-group button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.input-group button:hover{
+    background:#1d4ed8;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+    margin-bottom:20px;
+    color:#555;
+}
+
+#taskList{
+    list-style:none;
+}
+
+.task-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    margin-bottom:12px;
+    background:#f8fafc;
+    border-radius:10px;
+    border-left:5px solid #2563eb;
+}
+
+.task-item.completed{
+    border-left:5px solid green;
+}
+
+.task-item.completed .task-text{
+    text-decoration:line-through;
+    opacity:0.6;
+}
+
+.task-actions{
+    display:flex;
+    gap:10px;
+}
+
+.complete-btn{
+    background:green;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.empty{
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
