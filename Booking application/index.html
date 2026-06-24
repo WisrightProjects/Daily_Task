@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ride Booking Application</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1><img src="/img/wpicon.png">  RidinBook</h1>
+
+    <div class="card">
+
+        <input type="text" id="userName" placeholder="Enter User Name" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+
+        <input type="text" id="pickup" placeholder="Pickup Location" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+
+        <input type="text" id="drop" placeholder="Drop Location" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+
+        <input type="number" id="distance" placeholder="Distance (KM)" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+
+        <select id="vehicleType">
+            <option value="Cab">Cab</option>
+            <option value="Bike">Bike</option>
+            <option value="Auto">Auto</option>
+        </select>
+
+        <select id="paymentMethod">
+            <option value="Cash">Cash</option>
+            <option value="UPI">UPI</option>
+            <option value="Card">Card</option>
+        </select>
+
+        <button onclick="bookRide()">Book Ride</button>
+
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <div class="history">
+        <h2>Ride History</h2>
+        <ul id="historyList"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
