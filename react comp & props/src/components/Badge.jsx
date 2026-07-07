@@ -1,0 +1,1 @@
+export default function Badge({text='Active',color='green'}){return <span style={{background:color,color:'#fff',padding:'4px 10px',borderRadius:'12px'}}>{text}</span>;}

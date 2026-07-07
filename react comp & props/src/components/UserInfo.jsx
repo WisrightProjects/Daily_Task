@@ -1,0 +1,1 @@
+export default function UserInfo({name,email,age}){return <div><h3>{name}</h3><p>{email}</p><p>Age: {age}</p></div>;}

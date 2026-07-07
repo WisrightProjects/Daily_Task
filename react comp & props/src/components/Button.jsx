@@ -1,0 +1,1 @@
+export default function Button({text='Click Me',color='blue',onClick}){return <button onClick={onClick} style={{background:color,color:'#fff',border:'none',padding:'10px 16px',borderRadius:'6px',cursor:'pointer'}}>{text}</button>;}

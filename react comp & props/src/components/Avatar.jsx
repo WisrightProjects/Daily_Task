@@ -1,0 +1,1 @@
+export default function Avatar({image,size=100}){return <img src={image} alt='avatar' width={size} height={size} style={{borderRadius:'50%',objectFit:'cover'}}/>;}
